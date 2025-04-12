@@ -7,7 +7,7 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 GROUP_ID = os.getenv("GROUP_ID")
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
-SEND_TIME = "16:14"
+SEND_TIME = "16:40"
 TIMEZONE = "Asia/Yekaterinburg"
 
 # Проверка переменных окружения
