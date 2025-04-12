@@ -1,15 +1,21 @@
 import asyncio
 import logging
+import os
 from src.bot import setup_bot
 from src.scheduler import start_scheduler
 from aiohttp import ClientConnectorError
+
+# Создаём папку logs, если она не существует
+log_dir = "logs"
+if not os.path.exists(log_dir):
+    os.makedirs(log_dir)
 
 # Настройка логирования
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler("logs/bot.log"),
+        logging.FileHandler(os.path.join(log_dir, "bot.log")),
         logging.StreamHandler()
     ]
 )
